@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+        background-image: url('photos/landing_bg.jpeg');
+        background-repeat: no-repeat; 
+        background-size: cover;       
+        background-attachment: fixed;  
+    }
+    /* We keep the same base style for the rectangle, but make it wider for the menu */
+.small-rectangle.home-menu {
+  width: 500px; /* Made it wider to fit two buttons */
+  min-height: 200px;
+  background-color: rgba(78, 62, 140, 0.85); 
+  border: 2px solid #f8f8f8;
+  border-radius: 4px;
+  padding: 30px;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* This puts the two buttons side-by-side with a gap between them */
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  display: flex;
+  flex-direction: row;
+  gap: 40px; /* Adjust this to change the space between the two buttons */
+}
+
+/* The styling for the big image buttons */
+.menu-btn {
+  /* Forcing a fixed width and height makes them perfectly even */
+  width: 260px; 
+  height: 240px; 
+  
+  background-color: rgba(78, 62, 140, 0.85);
+  border: 2px solid #f8f8f8;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  /* Stacks the image and text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; 
+  
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+/* Hover and active states for the arcade feel */
+.menu-btn:hover {
+  background-color: #9d25b5;
+  transform: scale(1.05);
+}
+
+.menu-btn:active {
+  transform: scale(0.95);
+}
+
+.btn-image {
+  width: 100px; /* Adjust if your images need to be bigger/smaller */
+  height: 100px;
+  image-rendering: pixelated; 
+}
+
+.menu-btn span {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  color: #f8f8f8;
+  text-transform: uppercase;
+}
+    </style>
+    <body>
+        <div class="button-container">
+  
+            <button id="affirmation"class="menu-btn">
+              <img src="photos/affirmation.png" alt="Affirmations" class="btn-image">
+              <span>Affirmations</span>
+            </button>
+          
+            <button id="request" class="menu-btn">
+              <img src="photos/request.png" alt="Request" class="btn-image">
+              <span>Request</span>
+            </button>
+          
+          </div>
+    </body>
+    <script>
+        document.getElementById("affirmation").addEventListener("click", async()=>{
+            window.location.href= "affirmation.html";
+        });
+        document.getElementById("request").addEventListener("click", async()=>{
+            window.location.href= "request.html";
+        });
+    </script>
+
+
+
+
+
+</html>

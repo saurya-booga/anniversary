@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+        background-image: url('photos/landing_bg.jpeg');
+        background-repeat: no-repeat; 
+        background-size: cover;       
+        background-attachment: fixed;  
+    }
+    .small-rectangle {
+  /* Adjusted sizing so everything fits */
+  width: 450px; 
+  min-height: 120px; 
+  
+  /* I added a slight transparency to the background so the stars peek through! */
+  background-color: rgba(78, 62, 140, 0.85); 
+  border: 2px solid #f8f8f8; 
+  border-radius: 4px;     
+  padding: 25px;           
+
+  /* Flexbox settings: flex-direction 'column' stacks items vertically */
+  display: flex;          
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center; 
+  gap: 20px; /* Adds space between the text and the input box */
+
+  /* Keeps it perfectly centered on the screen */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* New Font Styling */
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px; /* Pixel fonts naturally look very large, so 12px is usually plenty */
+  color: #f8f8f8; 
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Styling for the new input box */
+.date-input {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  padding: 10px;
+  width: 80%; /* Makes the input box take up most of the container's width */
+  background-color: #2b1f5c; /* A darker purple for contrast */
+  border: 2px solid #f8f8f8;
+  color: white;
+  text-align: center;
+  outline: none; /* Removes the default blue glow when clicked */
+}
+
+/* Changes the placeholder text color so it's readable */
+.date-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+/* Styling for the submit button */
+.submit-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  padding: 10px 20px;
+  background-color: #821e96; /* Your original bright purple! */
+  color: #f8f8f8;
+  border: 2px solid #f8f8f8;
+  border-radius: 4px;
+  cursor: pointer; /* Changes the mouse to a pointing hand */
+  outline: none;
+  
+  /* This makes the hover animations smooth */
+  transition: transform 0.1s, background-color 0.2s; 
+}
+
+/* What happens when the mouse hovers over the button */
+.submit-btn:hover {
+  background-color: #9d25b5; /* Slightly lighter purple to show it's interactive */
+  transform: scale(1.05); /* Makes the button pop out slightly */
+}
+
+/* What happens when the button is actually clicked */
+.submit-btn:active {
+  transform: scale(0.95); /* Squishes the button down like a real physical button */
+}
+</style>
+
+<body>
+    <div class="small-rectangle">
+        <p>What date was it when we first held hands?</p>
+        <input id="input" type="text" class="date-input" placeholder="Type here...">
+        <button id="submit"class="submit-btn">Submit</button>
+    </div>
+</body>
+
+<script>
+    document.getElementById("submit").addEventListener("click", async()=>{
+        const input = document.getElementById("input").value;
+        if(input == "17"){
+            window.location.href = "home.html";
+        }
+        else{
+            alert("You are not my boyfriend bitch. Go away!");
+        }
+    });
+</script>    
+
+
+</html>
